@@ -1,0 +1,22 @@
+version: "1"
+
+services:
+  database:
+    image: postgres
+    ports:
+      - 6767:5432
+    restart: always
+    environment:
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: postdb
+        
+  
+  flask-service:
+    image: flask-app
+    ports:
+      - 5001:5000
+    restart: always
+  
+
+  
